@@ -7,6 +7,8 @@ services:
     environment:
       - LANG=C.UTF-8
       - POETRY_VENV=/app/.venv
+    volumes:
+      - whisper_models:/root/.cache/whisper
     working_dir: /app
     restart: unless-stopped
     healthcheck:
@@ -22,3 +24,8 @@ networks:
   whisper-network:
     driver: bridge
     name: whisper-network
+
+volumes:
+  whisper_models:
+    driver: local
+    name: whisper_models

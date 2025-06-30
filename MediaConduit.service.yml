@@ -14,7 +14,8 @@ docker:
   environment:
     LANG: "C.UTF-8"
     POETRY_VENV: "/app/.venv"
-  volumes: []
+  volumes:
+    - "whisper_models:/root/.cache/whisper"
 
 capabilities:
   - "audio-to-text"

@@ -6,9 +6,8 @@ docker:
   composeFile: "docker-compose.yml"
   serviceName: "whisper"
   image: "onerahmet/openai-whisper-asr-webservice:latest"
-  ports: [9000]
   healthCheck:
-    url: "http://localhost:9000/"
+    endpoint: "/"
     interval: "30s"
     timeout: "10s"
     retries: 3

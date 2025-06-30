@@ -3,7 +3,7 @@ services:
     image: onerahmet/openai-whisper-asr-webservice:latest
     container_name: whisper-service
     ports:
-      - "9000:9000"
+      - "${WHISPER_HOST_PORT:-0}:9000"
     environment:
       - LANG=C.UTF-8
       - POETRY_VENV=/app/.venv
